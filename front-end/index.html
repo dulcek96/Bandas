@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="API/estilosapi.css">
+    <title>Bandas</title>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center">Bandas</h1>
+    </div>
+
+    <div class="container">
+        <form id="myform">
+            <h1 class="text-center">Formulario de álbumes</h1>
+            <div class="form-group">
+                <label for="bandas">Bandas:</label>
+                <input type="text" id="bandas" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="fecha">Fecha de lanzamiento:</label>
+                <input type="date" id="fecha" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="lugar">Lugar:</label>
+                <input type="text" id="lugar" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="duracion">Duracion (en minutos):</label>
+                <input type="time" id="duracion" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="copias">Copias vendidas</label>
+                <input type="number" id="copias" class="form-control">
+            </div>
+            <!-- REVISAR SI SIRVE EL BOTON -->
+            <div class="d-flex justify-content-center text-center">
+            <button onclick="post()" class=" mt-4 btn btn-primary text-center">Enviar</button>
+            </div>
+        </form>
+    </div>
+</body> 
+</html>
