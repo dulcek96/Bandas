@@ -32,12 +32,20 @@
                 <img class="imgi" src="https://i0.wp.com/www.recovery-magazine.com/wp-content/uploads/2019/12/foto-portada-999.jpg?fit=999%2C562" alt="albumes">
             </div>
         </div>
-        <!-- REVISAR SI ESTÁ LÍNEA APLICA A NUESTRO PROYECTO -->
-        <div class="ep">
-            <label>Ingrese el endpoint:</label>
-            <input type="text" class="form-control" id="endPoint" placeholder="Pega la URL de tu endpoint aquí">
-            <button class="boton" onclick="consumir()">Obtener datos</button>
-        </div>
+        
+        <div class="container formularioeleccion">
+            <form id="formularioeleccion">
+              <h1>¡Descubre todo lo que necesitas saber en un solo lugar! Obtén acceso a toda la información que buscas en un solo clic.</h1>
+              <div class="form-group">
+                <label for="seleccionaopcion">Selecciona la opción</label>
+                <select id="opcion" class="form-control">
+                  <option value="opcion1">Bandas</option>
+                  <option value="opcion2">Conciertos</option>
+                  <option value="opcion3">Albumes</option>
+                  <option value="opcion4">Géneros</option>
+                </select>
+                <button class="boton" onclick="consumir()">Obtener datos</button>
+              </div>
     <div class="container formulario">
         <form id="myform">
             <h1 class="text-center mt-4">Formulario de álbumes</h1>
