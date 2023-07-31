@@ -18,16 +18,20 @@ function consumir() {
     var release_date = [ ];    
     var copies_sold = [];
     var id
+
     fetch("http://127.0.0.1:8000/api/bands")
     .then(function(respuesta1) {
       return respuesta1.json();
-    })fetch("http://127.0.0.1:8000/api/genres")
+    })
+    fetch("http://127.0.0.1:8000/api/genres")
     .then(function(respuesta2) {
       return respuesta2.json();
-    })fetch("http://127.0.0.1:8000/api/concerts")
+    })
+    fetch("http://127.0.0.1:8000/api/concerts")
     .then(function(respuesta3) {
       return respuesta3.json();
-    })fetch("http://127.0.0.1:8000/api/albums")
+    })
+    fetch("http://127.0.0.1:8000/api/albums")
     .then(function(respuesta4) {
       return respuesta4.json();
     })
