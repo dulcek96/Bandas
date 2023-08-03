@@ -1,108 +1,109 @@
 function consumir() {
-    var id_bandas = [];
-    var genre_id = [ ];    
-    var name_bandas = [];
-    var id_generos = [];
-    var name_generos = [];
-    var id_concert = [];
-    var band_id = [];
-    var name_concert = [];
-    var  date = [];
-    var  time = [];
-    var place_concert = [];
-    var id_albums = [];
-    var band_id_albums = [];
-    var name_albums = [];
-    var place_albums = [];
-    var duration = [];
-    var release_date = [ ];    
-    var copies_sold = []; 
+  var id_bandas = [];
+  var genre_id = [];
+  var name_bandas = [];
+  var id_generos = [];
+  var name_generos = [];
+  var id_concert = [];
+  var band_id = [];
+  var name_concert = [];
+  var date = [];
+  var time = [];
+  var place_concert = [];
+  var id_albums = [];
+  var band_id_albums = [];
+  var name_albums = [];
+  var place_albums = [];
+  var duration = [];
+  var release_date = [];
+  var copies_sold = [];
 
-    fetch("http://127.0.0.1:8000/api/bands")
-    .then(function(respuesta1) {
+  // Fetch para obtener datos de las bandas
+  fetch("http://127.0.0.1:8000/api/bands")
+    .then(function (respuesta1) {
       return respuesta1.json();
     })
-    .then(function(DatosBandas) {
-      id_bandas.push(DatosBandas['id']);
-      name_bandas.push(DatosBandas['name']);
-      genre_id.push(DatosBandas['genre_id ']);
-      })
+    .then(function (DatosBandas) {
+      DatosBandas.forEach((banda) => {
+        id_bandas.push(banda.id);
+        name_bandas.push(banda.name);
+        genre_id.push(banda.genre_id);
+      });
+    })
+    .then(function () {
+      var tabla1 = document.getElementById('tablaBands');
+      var contenido1 = '';
+      for (var i = 0; i < id_bandas.length; i++) {
+        contenido1 += '<tr><td>' + id_bandas[i] + '</td><td>' + name_bandas[i] + '</td><td>' + genre_id[i] + '</td></tr>';
+      }
+      tabla1.innerHTML = contenido1;
+    });
 
-      Promise.all()
-      .then (function() {
-        var tabla1 = document.getElementById('tbody');
-        var contenido1 = '';
-        for (var i = 0; i < id_bandas.length; i++) {
-          contenido += '<tr><td>' + id_bandas[i] + '</td><td>' + name_bandas[i] + '</td><td>' + genre_id[i] + '</td></tr>';
-        }
-        tabla1.innerHTML = contenido1;
-
-
-    fetch("http://127.0.0.1:8000/api/genres")
-    .then(function(respuesta2) {
+  // Fetch para obtener datos de los géneros
+  fetch("http://127.0.0.1:8000/api/genres")
+    .then(function (respuesta2) {
       return respuesta2.json();
     })
-    .then(function(DatosGeneros) {
-      id_generos.push(DatosGeneros['id']);
-      name_generos.push(DatosGeneros['name']);
-      })
+    .then(function (DatosGeneros) {
+      DatosGeneros.forEach((genero) => {
+        id_generos.push(genero.id);
+        name_generos.push(genero.name);
+      });
+    })
+    .then(function () {
+      var tabla2 = document.getElementById('tablaGenres');
+      var contenido2 = '';
+      for (var i = 0; i < id_generos.length; i++) {
+        contenido2 += '<tr><td>' + id_generos[i] + '</td><td>' + name_generos[i] + '</td></tr>';
+      }
+      tabla2.innerHTML = contenido2;
+    });
 
-      Promise.all()
-      .then (function() {
-        var tabla2 = document.getElementById('tbody');
-        var contenido2 = '';
-        for (var i = 0; i < urls.length; i++) {
-          contenido += '<tr><td>' + id_generos[i] + '</td><td>' + name_generos[i] + '</td></tr>';
-        }
-        tabla2.innerHTML = contenido2;
-
-
-    fetch("http://127.0.0.1:8000/api/concerts")
-    .then(function(respuesta3) {
+  // Fetch para obtener datos de los conciertos
+  fetch("http://127.0.0.1:8000/api/concerts")
+    .then(function (respuesta3) {
       return respuesta3.json();
     })
-    .then(function(DatosConciertos) {
-      id_concert.push(DatosConcierto['id']);
-      band_id.push(DatosConciertos['band_id']);
-      name_concert.push(DatosConciertos['name']);
-      date.push(DatosConciertos['date']);
-      time.push(DatosConciertos['time']);
-      place_concert.push(DatosConciertos['place']);
-      })
-
-      Promise.all(promesas)
-      .then (function() {
-        var tabla3 = document.getElementById('tbody');
-        var contenido3 = '';
-        for (var i = 0; i < urls.length; i++) {
-          contenido += '<tr><td>' + id_concert[i] + '</td><td>' + band_id[i] + '</td><td>' + name_concert[i] + '</td><td>' + date[i] + '</td><td>' + time[i] + '</td><td>' + place_concert[i] + '</td></tr>';
-        }
-        tabla3.innerHTML = contenido3;
-
-
-    fetch("http://127.0.0.1:8000/api/albums")
-    .then(function(respuesta4) {
-      return respuesta4.json();
+    .then(function (DatosConciertos) {
+      DatosConciertos.forEach((concierto) => {
+        id_concert.push(concierto.id);
+        band_id.push(concierto.band_id);
+        name_concert.push(concierto.name);
+        date.push(concierto.date);
+        time.push(concierto.time);
+        place_concert.push(concierto.place);
+      });
+    })
+    .then(function () {
+      var tabla3 = document.getElementById('tablaConcerts');
+      var contenido3 = '';
+      for (var i = 0; i < id_concert.length; i++) {
+        contenido3 += '<tr><td>' + id_concert[i] + '</td><td>' + band_id[i] + '</td><td>' + name_concert[i] + '</td><td>' + date[i] + '</td><td>' + time[i] + '</td><td>' + place_concert[i] + '</td></tr>';
+      }
+      tabla3.innerHTML = contenido3;
     });
-    .then(function(DatosAlbumes) {
-      id_albums.push(DatosAlbumes['id']);
-      band_id_albums.push(DatosAlbumes['band_id']);
-      name_albums.push(DatosAlbumes['name']);
-      duration.push(DatosAlbumes['duration']);
-      copies_sold.push(DatosAlbumes['copies_sold']);
-      place_albums.push(DatosAlbumes['place']);
-      release_date.push(DatosAlbumes['release_date']);
-      })
 
-
-      Promise.all(promesas)
-      .then (function() {
-        var tabla4 = document.getElementById('tbody');
-        var contenido4 = '';
-        for (var i = 0; i < urls.length; i++) {
-          contenido += '<tr><td>' + id_albums[i] + '</td><td>' + band_id_albums[i] + '</td><td>' + name_albums[i] + '</td><td>' + duration[i] + '</td><td>' + copies_sold[i] + '</td><td>' + place_albums[i] + '</td><td>' + release_date[i] + '</td></tr>';
-        }
-        tabla4.innerHTML = contenido4;
+  // Fetch para obtener datos de los álbumes
+  fetch("http://127.0.0.1:8000/api/albums")
+    .then(function (respuesta4) {
+      return respuesta4.json();
+    })
+    .then(function (DatosAlbumes) {
+      DatosAlbumes.forEach((album) => {
+        id_albums.push(album.id);
+        band_id_albums.push(album.band_id);
+        name_albums.push(album.name);
+        duration.push(album.duration);
+        copies_sold.push(album.copies_sold);
+        place_albums.push(album.place);
+        release_date.push(album.release_date);
+      });
+    })
+    .then(function () {
+      var tabla4 = document.getElementById('tablaAlbums');
+      var contenido4 = '';
+      for (var i = 0; i < id_albums.length; i++) {
+        contenido4 += '<tr><td>' + id_albums[i] + '</td><td>' + band_id_albums[i] + '</td><td>' + name_albums[i] + '</td><td>' + duration[i] + '</td><td>' + copies_sold[i
 
 
 
