@@ -103,8 +103,11 @@ function consumir() {
       var tabla4 = document.getElementById('tablaAlbums');
       var contenido4 = '';
       for (var i = 0; i < id_albums.length; i++) {
-        contenido4 += '<tr><td>' + id_albums[i] + '</td><td>' + band_id_albums[i] + '</td><td>' + name_albums[i] + '</td><td>' + duration[i] + '</td><td>' + copies_sold[i
-
+        contenido4 += '<tr><td>' + id_albums[i] + '</td><td>' + band_id_albums[i] + '</td><td>' + name_albums[i] + '</td><td>' + duration[i] + '</td><td>' + copies_sold[i] + '</td></tr>';
+      }
+      tabla4.innerHTML = contenido4;
+    });
+}
 
 
 
