@@ -109,6 +109,34 @@ function consumir() {
     });
 }
 
+// ... (código JavaScript existente) ...
+
+// Fetch para obtener datos de las bandas
+fetch("http://127.0.0.1:8000/api/bands")
+    .then(function (respuesta1) {
+        return respuesta1.json();
+    })
+    .then(function (DatosBandas) {
+        DatosBandas.forEach((banda) => {
+            id_bandas.push(banda.id);
+            name_bandas.push(banda.name);
+            genre_id.push(banda.genre_id);
+        });
+    })
+    .then(function () {
+        var tabla1 = document.getElementById('tablaBands');
+        var contenido1 = '';
+        for (var i = 0; i < id_bandas.length; i++) {
+            contenido1 += '<tr><td>' + id_bandas[i] + '</td><td>' + name_bandas[i] + '</td><td>' + genre_id[i] + '</td>';
+            contenido1 += '<td><button onclick="editarBanda(' + id_bandas[i] + ')" class="btn btn-primary btn-sm" title="Editar"><i class="fas fa-pencil-alt"></i></button>';
+            contenido1 += '<button onclick="eliminarBanda(' + id_bandas[i] + ')" class="btn btn-danger btn-sm" title="Eliminar"><i class="fas fa-trash-alt"></i></button></td></tr>';
+        }
+        tabla1.innerHTML = contenido1;
+    });
+
+// ... (continuar con el código JavaScript existente) ...
+
+
 
 
 // function post() {
