@@ -133,6 +133,63 @@ fetch("http://127.0.0.1:8000/api/bands")
         }
         tabla1.innerHTML = contenido1;
     });
+    function fetchTableData(url, tableId, headers, rowData) {
+      fetch(url)
+          .then(function (response) {
+              return response.json();
+          })
+          .then(function (data) {
+              var table = document.getElementById(tableId);
+              var tableBody = table.querySelector("tbody");
+              tableBody.innerHTML = "";
+  
+              data.forEach(function (item) {
+                  var row = document.createElement("tr");
+                  headers.forEach(function (header) {
+                      var cell = document.createElement("td");
+                      cell.textContent = item[header];
+                      row.appendChild(cell);
+                  });
+                  tableBody.appendChild(row);
+              });
+  
+              rowData[tableId] = data; // Store the data for further use (if needed)
+          })
+          .catch(function (error) {
+              console.error("Error fetching data:", error);
+          });
+  }
+  
+  function consumir() {
+      var rowData = {}; // Store the fetched data for each table
+  
+      fetchTableData("http://127.0.0.1:8000/api/bands",
+          "tablaBands",
+          ["id", "name", "genre_id"],
+          rowData
+      );
+  
+      fetchTableData("http://127.0.0.1:8000/api/genres",
+          "tablaGenres",
+          ["id", "name"],
+          rowData
+      );
+  
+      fetchTableData("http://127.0.0.1:8000/api/concerts",
+          "tablaConcerts",
+          ["id", "band_id", "name", "date", "time", "place"],
+          rowData
+      );
+  
+      fetchTableData("http://127.0.0.1:8000/api/albums",
+          "tablaAlbums",
+          ["id", "band_id", "name", "duration", "copies_sold"],
+          rowData
+      );
+  }
+  
+  
+  
 
 // ... (continuar con el código JavaScript existente) ...
 
