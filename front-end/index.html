@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+        crossorigin="anonymous">
     <title>Bandas</title>
 </head>
-<!DOCTYPE html>
-<html lang="en">
-
 <body>
     <header>
         <div class="titulo">
@@ -26,66 +25,135 @@
             <div>
                 <h2>¿Para qué funciona Bandas?</h2>
                 <!-- MODIFICAR AQUÍ Y PONER LAS INSTRUCCIONES-->
-                <p>AQUÍ FALTA PONER LA EXPOSICIÓN</p> 
+                <p>AQUÍ FALTA PONER LA EXPOSICIÓN</p>
             </div>
             <div>
-                <img class="imgi" src="https://i0.wp.com/www.recovery-magazine.com/wp-content/uploads/2019/12/foto-portada-999.jpg?fit=999%2C562" alt="albumes">
+                <img class="imgi" src="https://i0.wp.com/www.recovery-magazine.com/wp-content/uploads/2019/12/foto-portada-999.jpg?fit=999%2C562"
+                    alt="albumes">
             </div>
         </div>
-        
+
         <div class="container formularioeleccion">
             <form id="formularioeleccion">
-                <h1>¡Descubre todo lo que necesitas saber en un solo lugar! Obtén acceso a toda la información que buscas en un solo clic.</h1>
+                <h1>¡Descubre todo lo que necesitas saber en un solo lugar! Obtén acceso a toda la información que
+                    buscas en un solo clic.</h1>
                 <div class="form-group">
-                <label for="seleccionaopcion">Selecciona la opción</label>
-                <select name="opciones"  id="opcion" class="form-control">
-                <option value="opcion1">Bandas</option>
-                <option value="opcion2">Conciertos</option>
-                <option value="opcion3">Albumes</option>
-                <option value="opcion4">Géneros</option>
-                </select>
-                <button  class="boton" onclick="consumir()">Obtener datos</button>
-            </div>
+                    <label for="seleccionaopcion">Selecciona la opción</label>
+                    <select name="opciones" id="opcion" class="form-control">
+                        <option value="opcion1">Bandas</option>
+                        <option value="opcion2">Conciertos</option>
+                        <option value="opcion3">Albumes</option>
+                        <option value="opcion4">Géneros</option>
+                    </select>
+                </div>
+                <button class="boton" onclick="consumir()">Obtener datos</button>
             </form>
-    <div class="container formulario">
-        <form id="myform">
-            <h1 class="text-center mt-4">Formulario de álbumes</h1>
-            <div class="form-group">
-                <label for="bandas">Bandas:</label>
-                <input type="text" id="bandas" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="fecha">Fecha de lanzamiento:</label>
-                <input type="date" id="fecha" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="lugar">Lugar:</label>
-                <input type="text" id="lugar" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="duracion">Duracion (en minutos):</label>
-                <input type="time" id="duracion" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="copias">Copias vendidas</label>
-                <input type="number" id="copias" class="form-control">
-            </div>
-            <!-- REVISAR SI SIRVE EL BOTON -->
-            <div class="d-flex justify-content-center text-center">
-            <button onclick="post()" class=" mt-4 btn btn-primary text-center">Enviar</button>
-            </div>
-        </form>
-    </div>
-</body> 
-</main>
-<footer>
-    <h6>Gracias por visitar nuestra aplicación, ¡vuelve pronto!</h6> 
-    <!-- MODIFICAR EL ENDPOINT -->
-    <h6>Endpoint utilizado: https://pokeapi.co/api/v2/berry/</h6>
-    <h6>&copy; 2023 Poke Berries. Todos los derechos reservados.</h6>
-</footer>
+        </div>
+
+        <div class="container formulario">
+            <form id="myform">
+                <h1 class="text-center mt-4">Formulario de álbumes</h1>
+                <div class="form-group">
+                    <label for="bandas">Bandas:</label>
+                    <input type="text" id="bandas" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="fecha">Fecha de lanzamiento:</label>
+                    <input type="date" id="fecha" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="lugar">Lugar:</label>
+                    <input type="text" id="lugar" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="duracion">Duracion (en minutos):</label>
+                    <input type="time" id="duracion" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="copias">Copias vendidas</label>
+                    <input type="number" id="copias" class="form-control">
+                </div>
+                <!-- REVISAR SI SIRVE EL BOTON -->
+                <div class="d-flex justify-content-center text-center">
+                    <button onclick="post()" class=" mt-4 btn btn-primary text-center">Enviar</button>
+                </div>
+            </form>
+        </div>
+
+        <div>
+            <h2>Tabla de Bandas</h2>
+            <table id="tablaBands">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre de la Banda</th>
+                        <th>ID del Género</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Las filas de datos serán generadas por JavaScript -->
+                </tbody>
+            </table>
+
+            <h2>Tabla de Géneros</h2>
+            <table id="tablaGenres">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre del Género</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Las filas de datos serán generadas por JavaScript -->
+                </tbody>
+            </table>
+
+            <h2>Tabla de Conciertos</h2>
+            <table id="tablaConcerts">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>ID de la Banda</th>
+                        <th>Nombre del Concierto</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Lugar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Las filas de datos serán generadas por JavaScript -->
+                </tbody>
+            </table>
+
+            <h2>Tabla de Álbumes</h2>
+            <table id="tablaAlbums">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>ID de la Banda</th>
+                        <th>Nombre del Álbum</th>
+                        <th>Duración</th>
+                        <th>Copias Vendidas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Las filas de datos serán generadas por JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <h6>Gracias por visitar nuestra aplicación, ¡vuelve pronto!</h6>
+        <!-- MODIFICAR EL ENDPOINT -->
+        <h6>Endpoint utilizado: https://pokeapi.co/api/v2/berry/</h6>
+        <h6>&copy; 2023 Poke Berries. Todos los derechos reservados.</h6>
+    </footer>
+
+    <script src="logica.js"></script>
+</body>
+
 </html>
