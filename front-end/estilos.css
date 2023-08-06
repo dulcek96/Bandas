@@ -121,11 +121,12 @@ text-align: center;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    color: #FFE2A1;
 }
 
 .card{
-    border-radius:30px #FFDE00;
+    border-radius: 5px #FFDE00;
     color: #3B4CCA;
     font-family: 'Pokemon Solid', sans-serif;
     text-shadow: 8px 8px 8px #CC0000;
@@ -137,11 +138,14 @@ text-align: center;
     flex-direction: column;
     justify-content:center;
     gap: 20px;
-    width: 40%;
+    width: 45%;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #FFE2A1;
 }
 
 footer {
-    background-color: #CC0000;
+    background-color: #000000;
     text-align: center;
     color: antiquewhite;
     padding: 20px;
