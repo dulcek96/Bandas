@@ -1,39 +1,39 @@
 /* Estilos generales */
+main {
+    background-color: #EBC97C; /* Cambia el color de fondo a amarillo */
+}
+
 body {
-    background-color: #546FA4;
-    }
-    
-    
-    header {
+    background-color: #EBC97C; /* Cambia el color de fondo a amarillo */
+}
+
+header {
     width: 100%;
-    }
-    
-    
-    .titulo {
+}
+
+.titulo {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     background-color: #546FA4;
     color: #FFE2A1;
-    }
-    
-    
-    h1 {
+}
+
+h1 {
     font-family: 'Pokemon Solid', sans-serif;
     font-size: 55px;
     margin: 0; /* Elimina el margen por defecto del encabezado */
-    }
-    
-    
-    .imgt {
+    text-align: center;
+}
+
+.imgt {
     width: 90px;
     height: auto; /* Ajusta la altura automáticamente */
     padding: 20px;
-    }
-    
-    
-    h2 {
+}
+
+h2 {
     font-family: 'Pokemon Solid', sans-serif;
     font-size: 45px;
     color: #546FA4;
@@ -41,10 +41,9 @@ body {
     padding-top: 20px;
     padding-bottom: 20px;
     margin: 0; /* Elimina el margen por defecto del encabezado */
-    }
-    
-    
-    h3 {
+}
+
+h3 {
     font-family: 'Pokemon Solid', sans-serif;
     font-size: 20px;
     color: #546FA4;
@@ -52,52 +51,46 @@ body {
     padding-top: 20px;
     padding-bottom: 20px;
     margin: 0; /* Elimina el margen por defecto del encabezado */
-    }
-    
-    
-    .intro {
+}
+
+.intro {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     background-color: #EBC97C;
     padding: 20px; /* Ajusta el espaciado interno */
-    }
-    
-    
-    .formularioeleccion{
+}
+
+.formularioeleccion {
+    max-width: 70%;
+    margin: 0 auto;
     align-items: center;
     justify-content: center;
     background-color: #EBC97C;
     padding: 20px; /* Ajusta el espaciado interno */
-    margin: 0 auto;
-    
-    
-    }
-    
-    
-    p {
+    margin-bottom: 50px; /* Agrega margen inferior */
+}
+
+p {
     color: #546FA4;
     margin: 10px;
     text-align: justify;
-    }
-    
-    
-    .imgi {
+}
+
+.imgi {
     padding: 20px;
     width: 75%;
-    }
-    
-    
-    label {
+}
+
+label {
     font-family: 'Pokemon Solid', sans-serif;
     font-size: 35px;
     color: #546FA4;
     text-align: center;
-    }
-    
-    
-    .ep {
+}
+
+.ep {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -105,10 +98,9 @@ body {
     background-color: #7CA1EB;
     padding: 30px;
     gap: 20px;
-    }
-    
-    
-    .boton {
+}
+
+.boton {
     font-family: 'Pokemon Solid', sans-serif;
     align-items: center;
     color: #FFE2A1;
@@ -119,57 +111,54 @@ body {
     border: none;
     cursor: pointer;
     margin: 0 auto;
-    }
-    
-    
-    .tabla-container {
+    display: flex; /* Para centrar el contenido horizontal y verticalmente */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Alinear texto al centro vertical */
+}
+
+.tabla-container {
     display: flex;
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
-    }
-    
-    
-    .tabla {
+}
+
+.tabla {
     width: 100%;
     background-color: #EBC97C;
     border-collapse: collapse;
     text-align: center;
     font-size: 16px;
-    }
-    
-    
-    .tabla th {
+}
+
+.tabla th {
     background-color: #3B4CCA;
     color: white;
     font-weight: bold;
-    }
-    
-    
-    
-    
-    footer {
-    background-color:#FFE2A1;
+}
+
+footer {
+    background-color: #FFE2A1;
     text-align: center;
-    color:#546FA4;
+    color: #546FA4;
     padding: 20px;
-    }
-    
-    
-    .graficas {
+}
+
+.graficas {
     background-color: #546FA4;
-    color:#EBC97C;
-    }
-    .graficasrow {
+    color: #EBC97C;
+}
+
+.graficasrow {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 20px;
     color: #FFE2A1;
-    }
-    
-    
-    .card {
+}
+
+.card {
     border-radius: 5px;
     border: 1px solid #FFE2A1;
     color: #3B4CCA;
@@ -177,9 +166,8 @@ body {
     text-align: center;
     margin: 20px;
     padding: 20px;
-    background-color:#EBC97C;
+    background-color: #EBC97C;
     flex: 1;
     max-width: calc(50% - 20px);
     box-sizing: border-box;
-    }
-    
+}

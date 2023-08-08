@@ -34,27 +34,10 @@
                     alt="albumes">
             </div>
         </div>
-    </main>
-</body>
-</html>
-
-<!-- <div class="formularioeleccion"> -->
-    <!-- <h4>¡Descubre todo lo que necesitas saber en un solo lugar! Obtén acceso a toda la información que buscas en un solo clic.</h4>
-    <div class="form-group">
-      <label for="seleccionaopcion">Selecciona la opción</label>
-      <select name="opciones" id="opcion" class="form-control">
-        <option value="none">Selecciona</option>
-        <option value="opcion1">Bandas</option>
-        <option value="opcion2">Conciertos</option>
-        <option value="opcion3">Álbumes</option>
-        <option value="opcion4">Géneros</option>
-      </select>
-    </div> -->
-    <!-- <button type="button" class="boton" onclick="mostrar()">Mostrar Información</button>
-  </div>   -->
-<!-- BANDA -->
 <div>
-    <button type="button" class="boton" onclick="mostrar()">Mostrar Información Bandas</button>
+    <h1>Banda</h1>
+    <button type="button" class="boton" onclick="mostrarD()">Mostrar Información Bandas</button>
+    <br>
 </div>
 <div id="bandasDiv">
     <div>
@@ -72,13 +55,16 @@
         <label for="nombre">Banda</label>
         <input type="text" id="nombreBanda" class="form-control">
         <button type="button" class="boton" onclick="crear()">Subir registro</button>
+        <br>
       </form>
     </div>
   </div>
   
 <!-- CONCERTS -->
 <div>
+    <h1>Conciertos</h1>
     <button type="button" class="boton" onclick="mostrarC()">Mostrar Información conciertos</button>
+    <br>
 </div>
 <div id="conciertosDiv">
     <div>
@@ -99,21 +85,24 @@
             <label for="nombre">Concierto</label>
             <input type="text" id="nombre" class="form-control">
             <label for="fecha">Fecha</label>
-            <input type="date" id="fecha" class="form-control">
+            <input type="text" id="fecha" class="form-control">
             <label for="tiempo">Tiempo</label>
-            <input type="time" id="tiempo" class="form-control">
+            <input type="number" step="any" id="tiempo" class="form-control">
             <label for="lugar">Lugar</label>
             <input type="text" id="lugar" class="form-control">
             <button class="boton" onclick="crearC()">Subir registro</button>
+            <br>
         </form>
     </div>
 </div>
 
 <!-- ALBUMS-->
 <div>
+    <h1>Albums</h1>
     <button type="button" class="boton" onclick="mostrarA()">Mostrar Información albumes</button>
+    <br>
 </div>
-<div id="albumsDiv" style="display: none;">
+<div id="albumsDiv">
     <div>
         <table class="tabla" id="tabla3">
             <thead>
@@ -129,27 +118,29 @@
         </table>
     </div>
     <div>
-        <form id="myform">
-            <label for="nombre">Album/label</label>
+        <form id="myform" class="formularioeleccion">
+            <label for="nombre">Album</label>
             <input type="text" id="nombre" class="form-control">
             <label for="fecha">Fecha de lanzamiento</label>
-            <input type="date" id="fecha" class="form-control">
+            <input type="text" id="fecha" class="form-control">
             <label for="lugar">Lugar</label>
             <input type="text" id="lugar" class="form-control">
             <label for="duracion">Duración</label>
             <input type="text" id="duracion" class="form-control">
             <label for="copias">Copias vendidas</label>
             <input type="text" id="copias" class="form-control">
-            <button class="boton" onclick="post()">Subir registro</button>
+            <button class="boton" onclick="crearA()">Subir registro</button>
+            <br>
         </form>
     </div>
 </div>
-
 <!-- GENEROS-->
 <div>
+    <h1>Géneros</h1>
     <button type="button" class="boton" onclick="mostrarG()">Mostrar Información generos</button>
+    <br>
 </div>
-<div id="generosDiv" style="display: none;">
+<div id="generosDiv">
     <div>
         <table class="tabla" id="tabla4">
             <thead>
@@ -164,7 +155,8 @@
         <form id="myform" class="formularioeleccion">
             <label for="nombre">Género</label>
             <input type="text" id="nombre" class="form-control">
-            <button class="boton" onclick="post()">Haga click aquí</button>
+            <button class="boton" onclick="crearG()">Haga click aquí</button>
+            <br>
         </form>
     </div>
 </div>
@@ -206,6 +198,8 @@
 <script src="logica.js"></script>
 <script src="bandas.js"></script>
 <script src="conciertos.js"></script>
+<script src="albums.js"></script>
+<script src="generos.js"></script>
 </main>
 <footer>
     <h6>Gracias por visitar nuestra aplicación, ¡vuelve pronto!</h6>

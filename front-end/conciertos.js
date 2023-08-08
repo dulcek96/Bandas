@@ -1,17 +1,16 @@
-let endPoint='http://127.0.0.1:8000/api/concerts';
 //Conciertos eliminar
-function borrar(id) {
+function borrarC(id) {
     id = parseInt (id);
-    let endPoint= 'http://127.0.0.1:8000/api/concerts/' +id;
-    fetch( endPoint, {
+    let endPoint2= 'http://127.0.0.1:8000/api/concerts/' +id;
+    fetch( endPoint2, {
     method: "DELETE"
     })
    .then(res => res.json())
-   .then(data => {
-    console.log(data);
+   .then(datos2 => {
+    console.log(datos2);
     });
     alert("concierto eliminada");
-    //location.reload();
+    location.reload();
     mostrarC();
 }
 //Conciertos crear
@@ -20,49 +19,49 @@ function crearC() {
     let fecha = document.getElementById('fecha').value
     let tiempo = document.getElementById('tiempo').value
     let lugar = document.getElementById('lugar').value
-    let endPoint = 'http://127.0.0.1:8000/api/concerts'; 
-    const datos = {
+    let endPoint2 = 'http://127.0.0.1:8000/api/concerts'; 
+    const datos2 = {
         name: nombre,
         date: fecha,
         time: tiempo,
         place: lugar
     };
 
-    fetch(endPoint, {
+    fetch(endPoint2, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(datos)
+        body: JSON.stringify(datos2)
     })
     .then(res => res.json())
-    .then(data => {
-        console.log("concert created:", data);
+    .then(datos2 => {
+        console.log("concert created:", datos2);
     })
     alert("concierto creado");
     location.reload();
 }   
 //Conciertos leer 
 function mostrarC() {
-    let tabla = document.getElementById('tabla1');
-    let endPoint = 'http://127.0.0.1:8000/api/concerts';
-    tabla.innerHTML = '';
+    let tabla1 = document.getElementById('tabla1');
+    let endPoint2 = 'http://127.0.0.1:8000/api/concerts';
+    tabla1.innerHTML = '';
     
-    fetch(endPoint)
+    fetch(endPoint2)
         .then(respuesta => respuesta.json())
-        .then(data => {
+        .then(datos2 => {
             let html = '';
-            data.forEach(element => {
+            datos2.forEach(element => {
                 html += `
                     <tr>
                         <td>${element.name}</td>
                         <td>${element.date}</td>
                         <td>${element.time}</td>
                         <td>${element.place}</td>
-                        <td><button class="boton" onclick="borrar(${element.id})">Eliminar</button></td>
+                        <td><button class="boton" onclick="borrarC(${element.id})">Eliminar</button></td>
                     </tr>
                 `;
             });
-            tabla.innerHTML = html;
+            tabla1.innerHTML = html;
         });
 }      
