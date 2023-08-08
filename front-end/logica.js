@@ -1,4 +1,4 @@
-​​function mostrarInformacion() {
+​function mostrarInformacion() {
   var opcionSeleccionada = document.getElementById("opcion").value;
   document.getElementById("bandasDiv").style.display = "none";
   document.getElementById("conciertosDiv").style.display = "none";
