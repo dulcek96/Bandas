@@ -1,4 +1,4 @@
-​function mostrarInformacion() {
+function mostrarInformacion() {
   var opcionSeleccionada = document.getElementById("opcion").value;
   document.getElementById("bandasDiv").style.display = "none";
   document.getElementById("conciertosDiv").style.display = "none";
@@ -283,17 +283,7 @@
   document.getElementById("generosDiv").style.display = "block";
   
   
-  }}
-  
-  
-  
-  
-  // function mostrarInformacion() {
-  // var opcionSeleccionada = document.getElementById("opcion").value;
-  // var tablaResultados = document.getElementById("tablaResultados");
-  // var formularioCrear = document.getElementById("formularioCrear");
-  
-  
+  }} 
   // switch (opcionSeleccionada) {
   // case "opcion1":
   // var endpoint = "http://127.0.0.1:8000/api/bands";
