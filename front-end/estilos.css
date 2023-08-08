@@ -1,12 +1,14 @@
-body{
+/* Estilos generales */
+body {
     background-color: #546FA4;
 }
 
-header{
+header {
     width: 100%;
 }
-.titulo{
-    display:flex;
+
+.titulo {
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -14,135 +16,148 @@ header{
     color: #FFE2A1;
 }
 
-h1{
+h1 {
     font-family: 'Pokemon Solid', sans-serif;
     font-size: 55px;
+    margin: 0; /* Elimina el margen por defecto del encabezado */
 }
 
-.imgt{
-   width: 90px; 
-   height: fit-content;
-   padding: 20px;
+.imgt {
+    width: 90px;
+    height: auto; /* Ajusta la altura automáticamente */
+    padding: 20px;
 }
 
-h2{
+h2 {
     font-family: 'Pokemon Solid', sans-serif;
     font-size: 45px;
-    color:#546FA4;
+    color: #546FA4;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
+    margin: 0; /* Elimina el margen por defecto del encabezado */
 }
 
-h3{
+h3 {
     font-family: 'Pokemon Solid', sans-serif;
     font-size: 20px;
-    color:#546FA4;
+    color: #546FA4;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
+    margin: 0; /* Elimina el margen por defecto del encabezado */
 }
 
-.intro{
-    display:flex;
+.intro {
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color:#EBC97C;
+    background-color: #EBC97C;
+    padding: 20px; /* Ajusta el espaciado interno */
 }
 
-p{
-    color:#546FA4;
-    margin:10px;
+.formularioeleccion{
+    align-items: center;
+    justify-content: center;
+    background-color: #EBC97C;
+    padding: 20px; /* Ajusta el espaciado interno */
+    margin: 0 auto; 
+
+}
+
+p {
+    color: #546FA4;
+    margin: 10px;
     text-align: justify;
 }
 
-.imgi{
-    padding:20px;
+.imgi {
+    padding: 20px;
+    width: 75%;
 }
 
-label{
+label {
     font-family: 'Pokemon Solid', sans-serif;
     font-size: 35px;
-    color:#546FA4;
+    color: #546FA4;
     text-align: center;
 }
 
-.ep{
-    display:flex;
+.ep {
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color:#7CA1EB;
+    background-color: #7CA1EB;
     padding: 30px;
     gap: 20px;
 }
 
-.form-control{
-    border-radius:30px;
+.boton {
+        font-family: 'Pokemon Solid', sans-serif;
+        align-items: center;
+        color: #FFE2A1;
+        background-color: #546FA4;
+        width: 20%; /* Ajusta el ancho al 50% del contenedor */
+        height: 35px;
+        border-radius: 30px;
+        border: none;
+        cursor: pointer;
+        margin: 0 auto; 
 }
 
-.boton{
-    font-family:'Pokemon Solid', sans-serif;
-    font-size: 25px;
-    color:#FFE2A1;
-    background-color: #546FA4;
-    border: 90px;
-    width: 25%;   
-    height: 55px;
-    border-radius:30px;
-    padding:10px;
-}
-
-
-.secciontabla{
-    background-color:#3B4CCA;
-}
-
-.tablas{
+.tabla-container {
     display: flex;
-    flex-direction: row;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
 }
 
-.table{
-    background-color: #FFDE00;
-}
-.texttable{
-text-align: center;
-}
-
-.graficas{
-    align-items: center;
-    justify-content: center;
-    background-color:#3B4CCA;
-}
-
-.graficasrow{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.card{
-    border-radius:30px #FFDE00;
-    color: #3B4CCA;
-    font-family: 'Pokemon Solid', sans-serif;
-    text-shadow: 8px 8px 8px #CC0000;
-    font-size: 35px;
+.tabla {
+    width: 100%;
+    background-color: #EBC97C;
+    border-collapse: collapse;
     text-align: center;
-    margin-bottom: 20px;
-    background-color: #FFDE00;
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    gap: 20px;
-    width: 40%;
+    font-size: 16px;
 }
+
+.tabla th {
+    background-color: #3B4CCA;
+    color: white;
+    font-weight: bold;
+}
+
 
 footer {
-    background-color: #CC0000;
+    background-color:#FFE2A1;
     text-align: center;
-    color: antiquewhite;
+    color:#546FA4;
     padding: 20px;
+}
+
+.graficas {
+    background-color: #546FA4;
+    color:#EBC97C;
+}
+.graficasrow {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: #FFE2A1;
+}
+
+.card {
+    border-radius: 5px;
+    border: 1px solid #FFE2A1;
+    color: #3B4CCA;
+    font-size: 35px;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    background-color:#EBC97C;
+    flex: 1;
+    max-width: calc(50% - 20px);
+    box-sizing: border-box; 
 }
