@@ -1,188 +1,393 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-        crossorigin="anonymous">
-    <title>Bandas</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="estilos.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+crossorigin="anonymous">
+<title>Música</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-    <header>
-        <div class="titulo">
-            <img class="imgt" src="https://cdn-icons-png.flaticon.com/256/4443/4443287.png" alt="Guitarra">
-            <h1>Bandas</h1>
-            <img class="imgt" src="https://cdn-icons-png.flaticon.com/256/4443/4443287.png" alt="Guitarra">
-        </div>
-    </header>
-    <main>
-        <div class="intro">
-            <div>
-                <img class="imgi" src="https://cdn-icons-png.flaticon.com/256/446/446368.png" alt="Piano">
-            </div>
-            <div>
-                <h2>¿Para qué funciona Bandas?</h2>
-                <p>Esta API procporciona a los desarrolladores acceso a una base de datos estructurada y con información relevante que permite crear aplicaciones, 
-                    sitios web o servicios que puedan mostrar información detallada sobre bandas , conciertos, algunos géneros musicales, y obtener detalles sobre álbumes.</p>
-            </div>
-            <div>
-                <img class="imgi" src="https://i0.wp.com/www.recovery-magazine.com/wp-content/uploads/2019/12/foto-portada-999.jpg?fit=999%2C562"
-                    alt="albumes">
-            </div>
-        </div>
-        <div class="formularioeleccion">
-            <h1>¡Descubre todo lo que necesitas saber en un solo lugar! Obtén acceso a toda la información que
-                buscas en un solo clic.</h1>
-                <button type="button" class="boton" onclick="consumir()">Obtener datos</button>
-        </div>
-        <div>
-            <h2>Tabla de Bandas</h2>
-            <table id="tablaBands">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nombre de la Banda</th>
-                        <th>ID del Género</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-
-            <h2>Tabla de Géneros</h2>
-            <table id="tablaGenres">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nombre del Género</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-
-            <h2>Tabla de Conciertos</h2>
-            <table id="tablaConcerts">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>ID de la Banda</th>
-                        <th>Nombre del Concierto</th>
-                        <th>Fecha</th>
-                        <th>Hora</th>
-                        <th>Lugar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-
-            <h2>Tabla de Álbumes</h2>
-            <table id="tablaAlbums">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>ID de la Banda</th>
-                        <th>Nombre del Álbum</th>
-                        <th>Duración</th>
-                        <th>Copias Vendidas</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-        </div>
-        <div>
-         <form id="myform">
-                <div class="form-group">
-                    <label for="seleccionaopcion">Selecciona la opción</label>
-                    <select name="opciones" id="opcion" class="form-control">
-                        <option value="opcion1">Bandas</option>
-                        <option value="opcion2">Conciertos</option>
-                        <option value="opcion3">Albumes</option>
-                        <option value="opcion4">Géneros</option>
-                    </select>
-                </div>
-
-                   <div class="container formulario">
-                    <h1 class="text-center mt-4">Formulario de álbumes</h1>
-                    <div class="form-group">
-                        <label for="bandas">Bandas:</label>
-                        <input type="text" id="bandas" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="fecha">Fecha de lanzamiento:</label>
-                        <input type="date" id="fecha" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="lugar">Lugar:</label>
-                        <input type="text" id="lugar" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="duracion">Duracion (en minutos):</label>
-                        <input type="time" id="duracion" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="copias">Copias vendidas</label>
-                        <input type="number" id="copias" class="form-control">
-                    </div>
-                    <!-- BOTON  -->
-                     <div class="d-flex justify-content-center text-center">
-                        <button onclick="post()" class=" mt-4 btn btn-primary text-center">Enviar</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-
-        <div class="graficas">
-            <h2>Gráficas</h2>
-                <div class="graficasrow">
-                  <div class="card">
-                    <h3>Gráfica 1: Cantidad de copias vendidas por cada álbum.</h3>
-                    <div id="myDiv1"></div>
-                  </div>
-                  <div class="card">
-                    <h3>Gráfica 2: Bandas por Género.</h3>
-                    <div id="myDiv2"></div>
-                  </div>
-                </div>
-                <div class="graficasrow">
-                  <div class="card">
-                    <h3>Gráfica 3: Bandas por países.</h3>
-                    <div id="myDiv3"></div>
-                  </div>
-                  <div class="card">
-                    <h3>Gráfica 4: Cantidad de Géneros musicales.</h3>
-                    <div id="myDiv4"></div>
-                  </div>
-                </div>
-                <div class="graficasrow">
-                  <div class="card">
-                    <h3>Gráfica 5: Conciertos por cada lugar en el que se realizó.</h3>
-                    <div id="myDiv5"></div>
-                  </div>
-                  <div class="card">
-                    <h3>Gráfica 6: Álbumes por décadas</h3>
-                    <div id="myDiv6"></div>
-                  </div>
-                </div>
-
-    </main>
-    <footer>
-        <h6>Gracias por visitar nuestra aplicación, ¡vuelve pronto!</h6> 
-        <h6>&copy; 2023 Bandas. Todos los derechos reservados.</h6>
-    </footer>
-    <script src="logica.js"></script>
+<header>
+<div class="titulo">
+<img class="imgt" src="https://cdn-icons-png.flaticon.com/256/4443/4443287.png" alt="Guitarra">
+<h1>Música</h1>
+<img class="imgt" src="https://cdn-icons-png.flaticon.com/256/4443/4443287.png" alt="Guitarra">
+</div>
+</header>
+<main>
+<div class="intro">
+<div>
+<img class="imgi" src="https://cdn-icons-png.flaticon.com/256/446/446368.png" alt="Piano">
+</div>
+<div>
+<h2>¿Para qué funciona Música?</h2>
+<p>Esta API procporciona a los desarrolladores acceso a una base de datos estructurada y con información relevante que permite crear aplicaciones,
+sitios web o servicios que puedan mostrar información detallada sobre bandas , conciertos, algunos géneros musicales, y obtener detalles sobre álbumes.</p>
+</div>
+<div>
+<img class="imgi" src="https://i0.wp.com/www.recovery-magazine.com/wp-content/uploads/2019/12/foto-portada-999.jpg?fit=999%2C562"
+alt="albumes">
+</div>
+</div >
+<div class="formularioeleccion">
+<h4>¡Descubre todo lo que necesitas saber en un solo lugar! Obtén acceso a toda la información que
+buscas en un solo clic.</h4>
+<div class="form-group">
+<label for="seleccionaopcion">Selecciona la opción</label>
+<select name="opciones" id="opcion" class="form-control">
+<option value="none">Selecciona</option>
+<option value="opcion1">Bandas</option>
+<option value="opcion2">Conciertos</option>
+<option value="opcion3">Álbumes</option>
+<option value="opcion4">Géneros</option>
+</select>
+</div>
+<button type="button" class="boton" onclick="mostrarInformacion(event)">Mostrar Información</button>
+</form>
+</div>
+<!-- BANDA -->
+<div id="bandasDiv" style="display: none;">
+<div>
+<table id="tabla" class="tabla">
+<thead>
+<tr>
+<th>Nombre</th>
+</tr>
+</thead>
+<tbody id="tbody"></tbody>
+</table>
+</div>
+<div>
+<form id="bandasForm" class="formularioeleccion">
+<label for="nombre">Banda</label>
+<input type="text" id="nombreBanda" class="form-control">
+<button type="button" class=boton onclick="post()">Subir registro</button>
+</form>
+</div>
+</div>
+<!-- CONCERTS -->
+<div id="conciertosDiv" style="display: none;">
+<div>
+<div>
+<table class="tabla" id="tabla2">
+<thead>
+<tr>
+<th>Nombre</th>
+<th>Fecha</th>
+<th>Tiempo</th>
+<th>Lugar</th>
+</tr>
+</thead>
+<tbody id="tbody"></tbody>
+</table>
+</div>
+<form id="myform" class="formularioeleccion">
+<label for="nombre">Concierto</label>
+<input type="text" id="nombre" class="form-control">
+<label for="fecha">Fecha</label>
+<input type="date" id="fecha" class="form-control">
+<label for="tiempo">Tiempo</label>
+<input type="time" id="tiempo" class="form-control">
+<label for="lugar">Lugar</label>
+<input type="text" id="lugar" class="form-control">
+<button class=boton onclick="post()">Subir registro</button>
+</form>
+</div>
+</div>
+<!-- ALBUMS-->
+<div id="albumsDiv" style="display: none;">
+<div>
+<table class="tabla" id="tabla3">
+<thead>
+<tr>
+<th>Nombre</th>
+<th>Fecha de lanzamiento</th>
+<th>Lugar</th>
+<th>Duración</th>
+<th>Copias Vendidas</th>
+</tr>
+</thead>
+<tbody id="tbody"></tbody>
+</table>
+</div>
+<div>
+<form id="myform">
+<label for="nombre">Album/label>
+<input type="text" id="nombre" class="form-control">
+<label for="fecha">Fecha de lanzamiento</label>
+<input type="date" id="fecha" class="form-control">
+<label for="lugar">Lugar</label>
+<input type="text" id="lugar" class="form-control">
+<label for="duracion">Duración</label>
+<input type="text" id="duracion" class="form-control">
+<label for="copias">Copias vendidas</label>
+<input type="text" id="copias" class="form-control">
+<button class=boton onclick="post()">Subir registro</button>
+</form>
+</div>
+</div>
+<!-- GENEROS-->
+<div id="generosDiv" style="display: none;">
+<div>
+<table class="tabla" id="tabla4">
+<thead>
+<tr>
+<th>Nombre</th>
+</tr>
+</thead>
+<tbody id="tbody"></tbody>
+</table>
+</div>
+<div>
+<form id="myform" class="formularioeleccion">
+<label for="nombre">Género</label>
+<input type="text" id="nombre" class="form-control">
+<button class=boton onclick="post()">Haga click aqui</button>
+</form>
+</div>
+</div>
+<!-- GRÁFICAS -->
+<div class="graficas">
+<h2>DashBoard</h2>
+<div class="graficasrow">
+<div class="card">
+<h3>Gráfica 1: Cantidad de copias vendidas por cada álbum.</h3>
+<div id="myDiv1"></div>
+</div>
+<div class="card">
+<h3>Gráfica 2: Bandas por Género.</h3>
+<div id="myDiv2"></div>
+</div>
+</div>
+<div class="graficasrow">
+<div class="card">
+<h3>Gráfica 3: Bandas por países.</h3>
+<div id="myDiv3"></div>
+</div>
+<div class="card">
+<h3>Gráfica 4: Cantidad de Géneros musicales.</h3>
+<div id="myDiv4"></div>
+</div>
+</div>
+<div class="graficasrow">
+<div class="card">
+<h3>Gráfica 5: Conciertos por cada lugar en el que se realizó.</h3>
+<div id="myDiv5"></div>
+</div>
+<div class="card">
+<h3>Gráfica 6: Álbumes por décadas</h3>
+<div id="myDiv6"></div>
+</div>
+</div>
+</div>
+<script src="logica.js"></script>
+</main>
+<footer>
+<h6>Gracias por visitar nuestra aplicación, ¡vuelve pronto!</h6>
+<!-- MODIFICAR EL ENDPOINT -->
+<h6>&copy; 2023. Todos los derechos reservados.</h6>
+</footer>
 </body>
 
-</html>
 
 
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="estilos.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+crossorigin="anonymous">
+<title>Música</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+<header>
+<div class="titulo">
+<img class="imgt" src="https://cdn-icons-png.flaticon.com/256/4443/4443287.png" alt="Guitarra">
+<h1>Música</h1>
+<img class="imgt" src="https://cdn-icons-png.flaticon.com/256/4443/4443287.png" alt="Guitarra">
+</div>
+</header>
+<main>
+<div class="intro">
+<div>
+<img class="imgi" src="https://cdn-icons-png.flaticon.com/256/446/446368.png" alt="Piano">
+</div>
+<div>
+<h2>¿Para qué funciona Música?</h2>
+<p>Esta API procporciona a los desarrolladores acceso a una base de datos estructurada y con información relevante que permite crear aplicaciones,
+sitios web o servicios que puedan mostrar información detallada sobre bandas , conciertos, algunos géneros musicales, y obtener detalles sobre álbumes.</p>
+</div>
+<div>
+<img class="imgi" src="https://i0.wp.com/www.recovery-magazine.com/wp-content/uploads/2019/12/foto-portada-999.jpg?fit=999%2C562"
+alt="albumes">
+</div>
+</div >
+<div class="formularioeleccion">
+<h4>¡Descubre todo lo que necesitas saber en un solo lugar! Obtén acceso a toda la información que
+buscas en un solo clic.</h4>
+<div class="form-group">
+<label for="seleccionaopcion">Selecciona la opción</label>
+<select name="opciones" id="opcion" class="form-control">
+<option value="none">Selecciona</option>
+<option value="opcion1">Bandas</option>
+<option value="opcion2">Conciertos</option>
+<option value="opcion3">Álbumes</option>
+<option value="opcion4">Géneros</option>
+</select>
+</div>
+<button type="button" class="boton" onclick="mostrarInformacion(event)">Mostrar Información</button>
+</form>
+</div>
+<!-- BANDA -->
+<div id="bandasDiv" style="display: none;">
+<div>
+<table id="tabla" class="tabla">
+<thead>
+<tr>
+<th>Nombre</th>
+</tr>
+</thead>
+<tbody id="tbody"></tbody>
+</table>
+</div>
+<div>
+<form id="bandasForm" class="formularioeleccion">
+<label for="nombre">Banda</label>
+<input type="text" id="nombreBanda" class="form-control">
+<button type="button" class=boton onclick="post()">Subir registro</button>
+</form>
+</div>
+</div>
+<!-- CONCERTS -->
+<div id="conciertosDiv" style="display: none;">
+<div>
+<div>
+<table class="tabla" id="tabla2">
+<thead>
+<tr>
+<th>Nombre</th>
+<th>Fecha</th>
+<th>Tiempo</th>
+<th>Lugar</th>
+</tr>
+</thead>
+<tbody id="tbody"></tbody>
+</table>
+</div>
+<form id="myform" class="formularioeleccion">
+<label for="nombre">Concierto</label>
+<input type="text" id="nombre" class="form-control">
+<label for="fecha">Fecha</label>
+<input type="date" id="fecha" class="form-control">
+<label for="tiempo">Tiempo</label>
+<input type="time" id="tiempo" class="form-control">
+<label for="lugar">Lugar</label>
+<input type="text" id="lugar" class="form-control">
+<button class=boton onclick="post()">Subir registro</button>
+</form>
+</div>
+</div>
+<!-- ALBUMS-->
+<div id="albumsDiv" style="display: none;">
+<div>
+<table class="tabla" id="tabla3">
+<thead>
+<tr>
+<th>Nombre</th>
+<th>Fecha de lanzamiento</th>
+<th>Lugar</th>
+<th>Duración</th>
+<th>Copias Vendidas</th>
+</tr>
+</thead>
+<tbody id="tbody"></tbody>
+</table>
+</div>
+<div>
+<form id="myform">
+<label for="nombre">Album/label>
+<input type="text" id="nombre" class="form-control">
+<label for="fecha">Fecha de lanzamiento</label>
+<input type="date" id="fecha" class="form-control">
+<label for="lugar">Lugar</label>
+<input type="text" id="lugar" class="form-control">
+<label for="duracion">Duración</label>
+<input type="text" id="duracion" class="form-control">
+<label for="copias">Copias vendidas</label>
+<input type="text" id="copias" class="form-control">
+<button class=boton onclick="post()">Subir registro</button>
+</form>
+</div>
+</div>
+<!-- GENEROS-->
+<div id="generosDiv" style="display: none;">
+<div>
+<table class="tabla" id="tabla4">
+<thead>
+<tr>
+<th>Nombre</th>
+</tr>
+</thead>
+<tbody id="tbody"></tbody>
+</table>
+</div>
+<div>
+<form id="myform" class="formularioeleccion">
+<label for="nombre">Género</label>
+<input type="text" id="nombre" class="form-control">
+<button class=boton onclick="post()">Haga click aqui</button>
+</form>
+</div>
+</div>
+<!-- GRÁFICAS -->
+<div class="graficas">
+<h2>DashBoard</h2>
+<div class="graficasrow">
+<div class="card">
+<h3>Gráfica 1: Cantidad de copias vendidas por cada álbum.</h3>
+<div id="myDiv1"></div>
+</div>
+<div class="card">
+<h3>Gráfica 2: Bandas por Género.</h3>
+<div id="myDiv2"></div>
+</div>
+</div>
+<div class="graficasrow">
+<div class="card">
+<h3>Gráfica 3: Bandas por países.</h3>
+<div id="myDiv3"></div>
+</div>
+<div class="card">
+<h3>Gráfica 4: Cantidad de Géneros musicales.</h3>
+<div id="myDiv4"></div>
+</div>
+</div>
+<div class="graficasrow">
+<div class="card">
+<h3>Gráfica 5: Conciertos por cada lugar en el que se realizó.</h3>
+<div id="myDiv5"></div>
+</div>
+<div class="card">
+<h3>Gráfica 6: Álbumes por décadas</h3>
+<div id="myDiv6"></div>
+</div>
+</div>
+</div>
+<script src="logica.js"></script>
+</main>
+<footer>
+<h6>Gracias por visitar nuestra aplicación, ¡vuelve pronto!</h6>
+<!-- MODIFICAR EL ENDPOINT -->
+<h6>&copy; 2023. Todos los derechos reservados.</h6>
+</footer>
+</body>
